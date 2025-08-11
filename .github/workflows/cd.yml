@@ -24,6 +24,9 @@ jobs:
       - name: Build NestJS project
         run: npx @nestjs/cli build
 
+      - name: Copy public folder into dist
+        run: cp -r public dist/public
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
