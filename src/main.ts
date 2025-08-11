@@ -7,9 +7,9 @@ async function bootstrap() {
   app.enableCors({
     origin: 'http://localhost:3000', // Or the origin of your frontend
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true, // If your API needs to handle cookies or authentication
+    credentials: false, // If your API needs to handle cookies or authentication
   });
 
-  await app.listen(3232);
+  await app.listen(3000);
 }
 bootstrap();
