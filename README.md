@@ -6,4 +6,4 @@
 
 ## Deployed
 
-[nest-js-awd.onrender.com/quotesouti/nest-js-app](https://nest-js-awd.onrender.com/quotes)
+[nest-js-awd.onrender.com](https://nest-js-awd.onrender.com)
