@@ -18,7 +18,7 @@ dotenv.config();
   providers: [AppService],
   imports: [
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'public'),
+      rootPath: join(__dirname, 'public'),
     }),
     QuoteModule,
     TypeOrmModule.forRoot({

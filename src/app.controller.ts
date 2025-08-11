@@ -6,6 +6,6 @@ import { Response } from 'express';
 export class AppController {
   @Get()
   getSpa(@Res() res: Response) {
-    res.sendFile(join(__dirname, '..', 'public', 'index.html'));
+    res.sendFile(join(__dirname, 'public', 'index.html'));
   }
 }
