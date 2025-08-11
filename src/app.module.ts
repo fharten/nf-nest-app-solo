@@ -7,6 +7,9 @@ import { Quote } from './quotes/quote.entity';
 import { UsersModule } from './users/users.module';
 import { User } from './users/entity/user.entity';
 import { AuthModule } from './auth/auth.module';
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 @Module({
   controllers: [AppController],
@@ -14,8 +17,11 @@ import { AuthModule } from './auth/auth.module';
   imports: [
     QuoteModule,
     TypeOrmModule.forRoot({
-      type: 'sqlite',
-      database: 'database.sqlite',
+      type: 'postgres',
+      url: process.env.DATABASE_URL,
+      ssl: {
+        rejectUnauthorized: false,
+      },
       entities: [Quote, User],
       synchronize: true,
       migrations: [__dirname + '/../database/migrations/*.{js,ts}'], // Path to your migration files
