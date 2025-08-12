@@ -24,6 +24,7 @@ dotenv.config();
     TypeOrmModule.forRoot({
       type: 'postgres',
       url: process.env.DATABASE_URL,
+      ssl: { rejectUnauthorized: false },
       entities: [Quote, User],
       synchronize: true,
       migrations: [__dirname + '/../database/migrations/*.{js,ts}'], // Path to your migration files
